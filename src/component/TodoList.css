@@ -1,0 +1,250 @@
+.todo{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+
+    background: #191724;
+}
+
+.todo-list {
+    width: 70%;
+    padding: 30px;
+
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+    box-shadow: 0px 0px 10px 0px rgba(238, 236, 236, 0.1);
+    border-radius: 5px;
+}
+
+.todo-list-header {
+    display: grid;
+    grid-template-columns: 5fr 1fr 2fr 1fr 1fr;
+    /* justify-content: space-between; */
+    margin-bottom: 20px;
+    gap: 2rem;
+}
+.todo-list-input {
+    flex-grow: 1;
+    font-family: "Quicksand";
+    
+}
+
+.todo-list-add{
+    position: relative;
+} 
+
+.todo-list-add > input{
+    width: 100%;
+    height: 2.2rem;
+    padding-left: .7rem;
+    margin-right: 10px;
+
+    background: #272530;
+    border: 1.5px solid #6f4014;
+    border-radius: 3px;
+    
+    color: #fff;
+    font: 400 0.9rem "Quicksand";
+    /* flex-grow: 1; */
+}
+
+
+.todo-list-add > input:focus{
+    outline: none;
+    border: 1px solid #fd7f0a;
+}
+
+.todo-list-input:focus + label{
+    top: 0.5px;
+    left: 10px;
+
+    background: #272530;
+    color: #fd7f0a;
+
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+.todo-list-input::placeholder{
+    opacity: 0;
+    transition: all .3s;
+}
+
+.todo-list-input:focus::placeholder{
+    opacity: 1;
+    animation-delay: 0.2s;
+}
+
+.todo-list-input:not(:placeholder-shown) + label{
+    top: 0.5px;
+
+    font-weight: bold;
+
+    color: #fd7f0a;
+}
+.todo-list-add > label{
+    position: absolute;
+    top: 50%;
+    left: .8rem;
+    transform: translate(0,-50%);
+
+    font: 500 0.8rem "Quicksand";
+    color: #999;
+
+    transition: ease-in-out .3s;
+}
+
+.todo-list-button {
+    width: 100%;
+    height: 100%;
+    padding: 0.5rem;
+
+    border: none;
+
+    font: bold 0.8rem "Quicksand";
+    cursor: pointer;
+    background-image: linear-gradient(135deg, #008aff, #86d472);
+    border-radius: 1px;
+    box-sizing: border-box;
+    color: #ffffff;
+    z-index: 2;
+    transition: all 0.3s;
+}
+.ant-empty-description{
+    color: #ffffff !important;
+}
+.todo-list-button:hover{
+    transform: scale(0.9);
+    opacity: 0.8;
+}
+.todo-list-button:active{
+    transform: scale(1.1);
+}
+.todo-list-search {
+   
+}
+.todo-list-select{
+    height: 2.5rem;
+}
+.todo-list-sort,
+.todo-list-filter {
+    background: #272530;
+    width: 100%;
+    height: 100%;
+    padding: 0 0.5rem;
+    box-sizing: border-box;
+    border: 1px solid #6f4014;
+    outline: none;
+
+
+    color: #fff;
+    font: bold 0.8rem "Quicksand";
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+.todo-list-sort > option{
+    color: #fff;
+    font: bold 0.7rem "Quicksand";
+    cursor: pointer;
+}
+.todo-list-filter > option{
+    color: #fff;
+    cursor: pointer;
+    font: bold 0.7rem "Quicksand";
+}
+.todo-list-items {
+    background-color: #272530;
+}
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    background: #272530;
+}
+
+.todo-item-done {
+    color: #fff !important;
+    background-color: #272530;
+    font: 400 0.8rem "Quicksand";
+    /* border-block-end: 1px solid #ffffff !important; */
+}
+
+.todo-item-icon {
+    cursor: pointer;
+    min-width: 80px;
+    border: 1px solid #fff;  
+    padding: 0.5rem;
+    box-sizing: border-box;
+    color: white;
+    border-radius: 1px;
+    transition: all 0.2s;
+}
+.todo-item-icon:hover{
+    opacity: 0.8;
+    transform: scale(0.9);
+}
+.todo-item-icon:first-child{
+    background: #0091ff;
+}
+.todo-item-icon:last-child{
+    background: rgb(199, 5, 5);
+}
+.editTodo{
+    background:#fff;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 99999;
+    transform: translate(-50%,-50%);
+    width: 20rem;
+    height: 7rem;
+    border-radius: 5px;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.editTodo > h1 {
+    font-size: 1rem;
+    font-family: "Quicksand"
+}
+.editTodo > input{
+    width: 100%;
+    height: 2rem;
+    outline: none;
+    font-family: "Quicksand";
+    padding-left: 1rem;
+    box-sizing: border-box;
+}
+.editTodo > svg {
+    position: absolute;
+    top: 0rem;
+    right: 0rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+.editTodo > svg:hover{
+    color: #fd7f0a;
+}
+.bgd{
+    position: fixed;
+    inset: 0;
+    background:rgba(238, 236, 236, 0.1) ;
+    /* opacity: ; */
+    z-index: 999;
+}
+.inputEdit{
+    width: 14rem;
+    height: 2rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+    font: bold 1rem "Quicksand";
+    border: 1px solid transparent;
+    border-radius: 5px;
+}
+.hiddenIn{
+    display: none;
+}
